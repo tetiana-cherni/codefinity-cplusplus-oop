@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+
+class DigitalWallet {
+private:
+    double balance;
+
+protected:
+    std::string owner;
+
+public:
+    DigitalWallet(const std::string& ownerName)
+        : owner(ownerName), balance(0.0) {}
+
+    void addMoney(double amount) {
+        if(amount > 0) {
+            balance += amount;
+            std::cout << amount << "$ added to " << owner << "'s wallet." << std::endl;
+        } else {
+            std::cout << "Invalid amount!" << std::endl;
+        }
+    }
+
+    void showBalance() const {
+        std::cout << "Owner: " << owner << std::endl;
+        std::cout << "Balance: $" << balance << std::endl;
+    }
+};
+
+int main() {
+    DigitalWallet wallet("Alice");
+
+    wallet.addMoney(150);
+    wallet.showBalance();
+
+    wallet.addMoney(-50);
+
+    return 0;
+}
