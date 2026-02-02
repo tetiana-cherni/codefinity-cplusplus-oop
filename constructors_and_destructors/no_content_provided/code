@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+class Book {
+public:
+    Book(const std::string& title, const std::string&author, int ___)
+        : title(t), author(a), year(y) {}
+
+    Book(const std::string& ___, const std::string& ___)
+        : Book(___, ___, ___) {}
+
+    Book(const std::string& ___)
+        : Book(___, "___", ___) {}
+
+    void printInfo() {
+        std::cout << "Title: " << ___
+                  << ", Author: " << ___
+                  << ", Year: " << ___ << std::endl;
+    }
+
+    std::string title;
+    std::string author;
+    int year;
+};
+
+int main() {
+    Book book1("1984", "George Orwell", 1949);
+    Book book2("Clean Code", "Robert C. Martin");
+    Book book3("Mystery Book");
+
+    book1.printInfo(); // Title: 1984, Author: George Orwell, Year: 1949
+    book2.printInfo(); // Title: Clean Code, Author: Robert C. Martin, Year: 0
+    book3.printInfo(); // Title: Mystery Book, Author: Unknown, Year: 0
+    
+    return 0;
+}
